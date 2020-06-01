@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt测试1注释213行
+name: OpenWrt-加入netdata插件
 
 on:
   push:
@@ -122,14 +122,14 @@ jobs:
           # EOF
 
           # 多文件系统支持:
-          # cat >> .config <<EOF
-          # CONFIG_PACKAGE_kmod-fs-nfs=y
-          # CONFIG_PACKAGE_kmod-fs-nfs-common=y
-          # CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-          # CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-          # CONFIG_PACKAGE_kmod-fs-ntfs=y
-          # CONFIG_PACKAGE_kmod-fs-squashfs=y
-          # EOF
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_kmod-fs-nfs=y
+          CONFIG_PACKAGE_kmod-fs-nfs-common=y
+          CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+          CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+          CONFIG_PACKAGE_kmod-fs-ntfs=y
+          CONFIG_PACKAGE_kmod-fs-squashfs=y
+          EOF
 
           # USB3.0支持:
           # cat >> .config <<EOF
@@ -163,6 +163,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-webadmin=y
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
+          CONFIG_PACKAGE_luci-app-netdata=y
+          CONFIG_PACKAGE_luci-app-nlbwmon=y
           EOF
 
           # LuCI主题:
